@@ -6,9 +6,17 @@ import { Questions } from '../api/questions.js';
 import Question from './Question.jsx';
 
 class QuestionIndex extends Component {
+  deleteThisQuestion(id) {
+    Questions.remove({_id: id});
+  }
+
   renderQuestions() {
     return this.props.questions.map((question) => (
-      <Question key={question._id} question={question} />
+      <Question
+        key={question._id}
+        question={question}
+        deleteThisQuestion={(id) => this.deleteThisQuestion(id)}
+      />
     ));
   }
 
