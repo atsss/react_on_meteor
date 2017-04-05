@@ -9,7 +9,7 @@ import NewQuestion from '../ui/NewQuestion';
 export const renderRoutes = () => (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={QuestionIndex}/>
+      <Route path="/questions" component={QuestionIndex}/>
       <Route path="/new" component={NewQuestion}/>
     </Route>
   </Router>

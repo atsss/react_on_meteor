@@ -8,7 +8,7 @@ export default class App extends Component {
         <header>
           <h1>React Meteor Questions</h1>
           <ul role="nav">
-            <li><NavLink to="/" onlyActiveOnIndex>Questions</NavLink></li>
+            <li><NavLink to="/questions" onlyActiveOnIndex>Questions</NavLink></li>
             <li><NavLink to="/new">Create Question</NavLink></li>
           </ul>
         </header>
