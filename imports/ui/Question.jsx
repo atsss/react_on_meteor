@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import NavLink from './NavLink';
 
 export default class Question extends Component {
   render() {
@@ -11,6 +12,7 @@ export default class Question extends Component {
         }}>
           &times;
         </button>
+        <NavLink to={'/questions/'+this.props.question._id}>More Detail</NavLink>
       </li>
     );
   }
