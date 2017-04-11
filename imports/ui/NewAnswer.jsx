@@ -9,9 +9,11 @@ export default class NewAnswer extends Component {
     event.preventDefault();
 
     const content = ReactDOM.findDOMNode(this.refs.textContent).value.trim();
+    const question_id = this.props.params.id
 
     Answers.insert({
       content,
+      question_id,
       createdAt: new Date(),
     });
 

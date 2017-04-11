@@ -32,8 +32,8 @@ AnswerIndex.propTypes = {
   answers: PropTypes.array.isRequired,
 };
 
-export default createContainer(() => {
+export default createContainer(({ params }) => {
   return {
-    answers: Answers.find({ content: { $exists: true }}).fetch(),
+    answers: Answers.find({ question_id: params.id }).fetch(),
   };
 }, AnswerIndex);
