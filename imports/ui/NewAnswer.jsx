@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { createContainer } from 'meteor/react-meteor-data';
@@ -11,11 +12,7 @@ export default class NewAnswer extends Component {
     const content = ReactDOM.findDOMNode(this.refs.textContent).value.trim();
     const question_id = this.props.params.id
 
-    Answers.insert({
-      content,
-      question_id,
-      createdAt: new Date(),
-    });
+    Meteor.call('answers.insert', content, question_id);
 
     ReactDOM.findDOMNode(this.refs.textContent).value = '';
   }
