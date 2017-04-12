@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -9,10 +10,7 @@ export default class NewQuestion extends Component {
 
     const content = ReactDOM.findDOMNode(this.refs.textContent).value.trim();
 
-    Questions.insert({
-      content,
-      createdAt: new Date(),
-    });
+    Meteor.call('questions.insert', content);
 
     ReactDOM.findDOMNode(this.refs.textContent).value = '';
   }

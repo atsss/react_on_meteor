@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
@@ -7,7 +8,7 @@ import Question from './Question.jsx';
 
 class QuestionIndex extends Component {
   deleteThisQuestion(id) {
-    Questions.remove({_id: id});
+    Meteor.call('questions.remove', id);
   }
 
   renderQuestions() {
